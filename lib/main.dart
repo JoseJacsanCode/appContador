@@ -9,23 +9,56 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomePage(),);
+    return const MaterialApp(home: HomePage());
   }
 }
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  void decrement() {
+    print('decrement');
+  }
+
+  void increment() {
+    print('increment');
+  }
+
   @override
   Widget build(BuildContext build) {
-    return Container(
-      color: Colors.blue,
-      alignment: Alignment.center,
-      child: Text('Olá Mundo',
-      style: TextStyle(
-        color: Colors.white,
-        fontSize: 50
-      ),
+    return Scaffold(
+      backgroundColor: Colors.red,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text(
+            'Pode entrar!',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 30,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          const Text('0', style: TextStyle(color: Colors.white, fontSize: 100)),
+          Row(
+            children: [
+              TextButton(
+                onPressed: decrement,
+                child: Text(
+                  'Saiu',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+              ),
+              TextButton(
+                onPressed: increment,
+                child: Text(
+                  'Entrou',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
