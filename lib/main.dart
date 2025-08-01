@@ -16,44 +16,67 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  void decrement() {
-    print('decrement');
+  void increment() {
+    print('Increment');
   }
 
-  void increment() {
-    print('increment');
+  void decrement() {
+    print('Decrement');
   }
 
   @override
-  Widget build(BuildContext build) {
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.red,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(
+          Text(
             'Pode entrar!',
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w600,
             ),
           ),
-          const Text('0', style: TextStyle(color: Colors.white, fontSize: 100)),
+          Padding(
+            padding: EdgeInsets.all(32),
+            child: Text('0', 
+            style: TextStyle(color: Colors.white, fontSize: 100)
+            ),
+          ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextButton(
-                onPressed: decrement,
-                child: Text(
+                onPressed: increment,
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  fixedSize: Size(100, 100),
+                  foregroundColor: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24)
+                  )
+                ),
+                child: const Text(
                   'Saiu',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(color: Colors.black, fontSize: 16),
                 ),
               ),
+              const SizedBox(width: 32,),
               TextButton(
-                onPressed: increment,
-                child: Text(
+                onPressed: decrement,
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  fixedSize: Size(100, 100),
+                  foregroundColor: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24)
+                  )
+                ),
+                child: const Text(
                   'Entrou',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(color: Colors.black, fontSize: 16),
                 ),
               ),
             ],
