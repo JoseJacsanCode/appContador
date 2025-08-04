@@ -35,48 +35,52 @@ class HomePage extends StatelessWidget {
             'Pode entrar!',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 40,
               fontWeight: FontWeight.w600,
             ),
           ),
-          Padding(
-            padding: EdgeInsets.all(32),
-            child: Text('0', 
-            style: TextStyle(color: Colors.white, fontSize: 100)
+          Padding(padding: EdgeInsets.all(30),
+          child: Text(
+            '0',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 80,
+              fontWeight: FontWeight.w600,
             ),
+          ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextButton(
-                onPressed: increment,
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  fixedSize: Size(100, 100),
-                  foregroundColor: Colors.black,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24)
-                  )
-                ),
-                child: const Text(
-                  'Saiu',
-                  style: TextStyle(color: Colors.black, fontSize: 16),
-                ),
-              ),
-              const SizedBox(width: 32,),
-              TextButton(
                 onPressed: decrement,
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.white,
-                  fixedSize: Size(100, 100),
                   foregroundColor: Colors.black,
+                  fixedSize: Size(100, 100),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24)
+                    borderRadius: BorderRadius.circular(30)
                   )
                 ),
-                child: const Text(
+                child: Text(
+                  'Saiu',
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                ),
+              ),
+              SizedBox(width: 30),
+              TextButton(
+                onPressed: increment,
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  foregroundColor: Colors.black,
+                  fixedSize: Size(100, 100),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)
+                  )
+                ),
+                child: Text(
                   'Entrou',
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+                  style: TextStyle(color: Colors.black, fontSize: 20),
                 ),
               ),
             ],
