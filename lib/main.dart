@@ -33,21 +33,14 @@ class HomePage extends StatelessWidget {
         children: [
           Text(
             'Pode entrar!',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 40,
-              fontWeight: FontWeight.w600,
-            ),
+            style: TextStyle(fontSize: 30, color: Colors.white),
           ),
-          Padding(padding: EdgeInsets.all(30),
-          child: Text(
-            '0',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 80,
-              fontWeight: FontWeight.w600,
+          Padding(
+            padding: EdgeInsets.all(30),
+            child: Text(
+              '0',
+              style: TextStyle(fontSize: 60, color: Colors.white),
             ),
-          ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -80,7 +73,7 @@ class HomePage extends StatelessWidget {
                 ),
                 child: Text(
                   'Entrou',
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  style: TextStyle(fontSize: 20, color: Colors.black),
                 ),
               ),
             ],
