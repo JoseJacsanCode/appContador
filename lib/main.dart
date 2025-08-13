@@ -9,7 +9,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: HomePage());
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage());
   }
 }
 
@@ -28,57 +30,65 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.red,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Pode entrar!',
-            style: TextStyle(fontSize: 30, color: Colors.white),
-          ),
-          Padding(
-            padding: EdgeInsets.all(30),
-            child: Text(
-              '0',
-              style: TextStyle(fontSize: 60, color: Colors.white),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/image.jpg'),
+            fit: BoxFit.cover
+          )
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Pode entrar!',
+              style: TextStyle(fontSize: 30, color: Colors.white),
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextButton(
-                onPressed: decrement,
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.black,
-                  fixedSize: Size(100, 100),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)
-                  )
-                ),
-                child: Text(
-                  'Saiu',
-                  style: TextStyle(color: Colors.black, fontSize: 20),
-                ),
+            Padding(
+              padding: EdgeInsets.all(30),
+              child: Text(
+                '0',
+                style: TextStyle(fontSize: 60, color: Colors.white),
               ),
-              SizedBox(width: 30),
-              TextButton(
-                onPressed: increment,
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.black,
-                  fixedSize: Size(100, 100),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)
-                  )
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  onPressed: decrement,
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    fixedSize: Size(100, 100),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)
+                    )
+                  ),
+                  child: Text(
+                    'Saiu',
+                    style: TextStyle(color: Colors.black, fontSize: 20),
+                  ),
                 ),
-                child: Text(
-                  'Entrou',
-                  style: TextStyle(fontSize: 20, color: Colors.black),
+                SizedBox(width: 30),
+                TextButton(
+                  onPressed: increment,
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    fixedSize: Size(100, 100),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)
+                    )
+                  ),
+                  child: Text(
+                    'Entrou',
+                    style: TextStyle(fontSize: 20, color: Colors.black),
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
