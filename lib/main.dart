@@ -9,9 +9,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage());
+    return const MaterialApp(home: HomePage());
   }
 }
 
@@ -27,28 +25,35 @@ class HomePage extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext conext) {
     return Scaffold(
-      backgroundColor: Colors.red,
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/image.jpg'),
-            fit: BoxFit.cover
-          )
+            fit: BoxFit.cover,
+          ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               'Pode entrar!',
-              style: TextStyle(fontSize: 30, color: Colors.white),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.w600,
+              ),
             ),
             Padding(
-              padding: EdgeInsets.all(30),
+              padding: const EdgeInsets.all(30),
               child: Text(
                 '0',
-                style: TextStyle(fontSize: 60, color: Colors.white),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 60,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
             Row(
@@ -61,30 +66,33 @@ class HomePage extends StatelessWidget {
                     foregroundColor: Colors.black,
                     fixedSize: Size(100, 100),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30)
+                      borderRadius: BorderRadius.circular(30),
                     )
                   ),
                   child: Text(
                     'Saiu',
-                    style: TextStyle(color: Colors.black, fontSize: 20),
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
-                SizedBox(width: 30),
-                TextButton(
-                  onPressed: increment,
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
-                    fixedSize: Size(100, 100),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30)
-                    )
-                  ),
-                  child: Text(
-                    'Entrou',
-                    style: TextStyle(fontSize: 20, color: Colors.black),
-                  ),
+                SizedBox(width: 30,),
+                TextButton(onPressed: increment, 
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  foregroundColor: Colors.black,
+                  fixedSize: Size(100, 100),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)
+                  )
                 ),
+                child: Text('Entrou', style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),),),
               ],
             ),
           ],
