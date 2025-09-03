@@ -9,23 +9,34 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: HomePage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
-  void increment() {
-    print('Increment');
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int count = 0;
+
+  increment() {
+    setState(() {
+      count++;
+    });
   }
 
-  void decrement() {
-    print('Decrement');
+  decrement() {
+    setState(() {
+      count--;
+    });
   }
 
   @override
-  Widget build(BuildContext conext) {
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -41,17 +52,17 @@ class HomePage extends StatelessWidget {
               'Pode entrar!',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 40,
                 fontWeight: FontWeight.w600,
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(30),
               child: Text(
-                '0',
-                style: TextStyle(
+                '$count' /*ou count.toString() */,
+                style: const TextStyle(
                   color: Colors.white,
-                  fontSize: 60,
+                  fontSize: 65,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -67,32 +78,37 @@ class HomePage extends StatelessWidget {
                     fixedSize: Size(100, 100),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
-                    )
+                    ),
                   ),
                   child: Text(
                     'Saiu',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 20,
+                      fontSize: 23,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
-                SizedBox(width: 30,),
-                TextButton(onPressed: increment, 
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.black,
-                  fixedSize: Size(100, 100),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)
-                  )
+                SizedBox(width: 30),
+                TextButton(
+                  onPressed: increment,
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    fixedSize: Size(100, 100),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  child: Text(
+                    'Entrou',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 23,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
-                child: Text('Entrou', style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                ),),),
               ],
             ),
           ],
