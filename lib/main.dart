@@ -35,6 +35,9 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  bool get isEmpty => count == 0;
+  bool get isFull => count == 12;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,20 +52,20 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Pode entrar!',
+              isFull ? 'Lotado' : 'Pode entrar',
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 40,
+                color: isFull ? Colors.red : Colors.white,
+                fontSize: 30,
                 fontWeight: FontWeight.w600,
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(30),
+              padding: EdgeInsets.all(30),
               child: Text(
-                '$count' /*ou count.toString() */,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 65,
+                '$count',
+                style: TextStyle(
+                  color: isFull ? Colors.red : Colors.white,
+                  fontSize: 60,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -70,10 +73,14 @@ class _HomePageState extends State<HomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                
+                //Botão de sair
                 TextButton(
-                  onPressed: decrement,
+                  onPressed: isEmpty ? null : decrement,
                   style: TextButton.styleFrom(
-                    backgroundColor: Colors.white,
+                    backgroundColor: isEmpty
+                        ? Colors.white.withValues(alpha: 0.2)
+                        : Colors.white,
                     foregroundColor: Colors.black,
                     fixedSize: Size(100, 100),
                     shape: RoundedRectangleBorder(
@@ -90,10 +97,14 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 SizedBox(width: 30),
+
+                //Botão de entrar
                 TextButton(
-                  onPressed: increment,
+                  onPressed: isFull ? null : increment,
                   style: TextButton.styleFrom(
-                    backgroundColor: Colors.white,
+                    backgroundColor: isFull
+                        ? Colors.white.withValues(alpha: 0.2)
+                        : Colors.white,
                     foregroundColor: Colors.black,
                     fixedSize: Size(100, 100),
                     shape: RoundedRectangleBorder(
