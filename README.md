@@ -34,7 +34,7 @@ O projeto segue a estrutura padrão de um aplicativo Flutter, com os principais 
 - Pastas específicas para cada plataforma (android, ios, web, etc)
 
 ## Link para download do apk
-[Baixar Contador.apk](https://download1527.mediafire.com/gc8ykwp0c5bgDlxAOHYWC_J6LnwPb9IKdA-_fV_xsn89YlX7o06fbO4y5VuIJbO_2TBEaNDlrFDIMLnHyUPPUHBLIma0ghqSmdgd2xyxBgHPxHVNofw5tcEqRkI9wGpRDdVEFTfDtRZZi7Jiirs2E0MR0dNC6UgsbCv2grDab70VsVuB/nwono917vqtgms8/Contador.apk)
+[Baixar Contador.apk](https://www.mediafire.com/file/nwono917vqtgms8/Contador.apk/file)
 <br>
 
 
