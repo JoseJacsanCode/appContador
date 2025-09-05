@@ -34,11 +34,24 @@ O projeto segue a estrutura padrão de um aplicativo Flutter, com os principais 
 - Pastas específicas para cada plataforma (android, ios, web, etc)
 
 ## Link para download do apk
+[Baixar Contador.apk](https://download1527.mediafire.com/gc8ykwp0c5bgDlxAOHYWC_J6LnwPb9IKdA-_fV_xsn89YlX7o06fbO4y5VuIJbO_2TBEaNDlrFDIMLnHyUPPUHBLIma0ghqSmdgd2xyxBgHPxHVNofw5tcEqRkI9wGpRDdVEFTfDtRZZi7Jiirs2E0MR0dNC6UgsbCv2grDab70VsVuB/nwono917vqtgms8/Contador.apk)
+<br>
 
 
 ## Screenshots
 
-[Screenshots do aplicativo em funcionamento]
+1. Como o app fica na área de trabalho:
+![image alt](https://github.com/JoseJacsanCode/appContador/blob/f811cd4176ec337fb74b5ab3e8a6bff58e8a2939/Print%201.png)
+
+<br><br>
+
+2. App aberto:<br>
+![image alt](https://github.com/JoseJacsanCode/appContador/blob/f811cd4176ec337fb74b5ab3e8a6bff58e8a2939/Print%202.png)
+
+<br><br>
+
+3. Lotação máxima atingida: <br>
+![image alt](https://github.com/JoseJacsanCode/appContador/blob/f811cd4176ec337fb74b5ab3e8a6bff58e8a2939/Print%203.png)
 
 ## Estado do Projeto
 
