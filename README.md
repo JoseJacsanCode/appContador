@@ -53,7 +53,7 @@ O projeto segue a estrutura padrão de um aplicativo Flutter, com os principais 
 3. Lotação máxima atingida: <br>
 ![image alt](https://github.com/JoseJacsanCode/appContador/blob/f811cd4176ec337fb74b5ab3e8a6bff58e8a2939/Print%203.png)
 
-## Estado do Projeto
+## Finalidade do projeto
 
 Este é um projeto inicial desenvolvido para fins de aprendizado e demonstração de conceitos básicos do Flutter, como:
 
